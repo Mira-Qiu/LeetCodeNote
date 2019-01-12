@@ -30,5 +30,5 @@ Binary Search in Result<br>
 2. 寻找满足某条件的第一或最后一个位置<br>
 3.保留生下来一定有用的那一半<br>
 
-###LeetCode
+### LeetCode
 704. Binary Search<br>
