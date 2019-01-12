@@ -32,3 +32,4 @@ Binary Search in Result<br>
 
 ### LeetCode
 704. Binary Search<br>
+74. Search a 2D Matrix<br>
