@@ -14,11 +14,12 @@ T(n) = T(n/2) + O(n) = O(n)
 ```
 
 #### 二分法模版四要素
-```java
+```
 start + 1 < end
 start + (end + start) /2
 A[mid] ==,<,>
 A[start],A[end] ? target
+```
 
 #### 两类二分法
 Binary Search in index<br>
