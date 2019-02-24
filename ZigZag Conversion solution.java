@@ -10,6 +10,10 @@ Write the code that will take a string and make this conversion given a number o
 
 string convert(string s, int numRows);
 
+1. stringbuilder
+2. index = i % ( 2 * numsRow - 2)
+3. T=O(n), S =O(n)
+
 */
 
 class Solution {
