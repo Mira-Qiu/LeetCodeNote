@@ -1,4 +1,13 @@
 class Solution {
+/*
+res 所在的为止就是 长度
+Given nums = [3,2,2,3], val = 3
+              2,2
+                  r   //r 所在为止就是长度
+                    i
+time = O(n)
+space = O(n)
+*/
     public int removeElement(int[] nums, int val) {
         if (nums == null || nums.length == 0) return 0;
         int res = 0;
