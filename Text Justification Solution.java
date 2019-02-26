@@ -1,3 +1,53 @@
+SECOND DRAFT: 2/25/2019
+class Solution {
+    public List<String> fullJustify(String[] words, int maxWidth) {
+        List<String> res = new ArrayList<>();
+        int index = 0; //count reach to which word
+        while (index < words.length){
+            int count = words[index].length(); //count each word length
+            int last = index + 1; //boundary
+            while (last < words.length){
+                if (words[last].length() + count + 1 > maxWidth) break; //last word length + before count + 1(space) > maxWidth
+                count += 1 + words[last].length(); //count colect all the letters +1(space)
+                last++;
+            }
+            StringBuilder builder = new StringBuilder();
+            builder.append(words[index]); //put first words in the builder.
+            int diff = last - index - 1; //extra spaces"This___is__an"
+            if ( last == words.length || diff == 0){
+                for (int i = index + 1; i < last; i++){
+                    builder.append(" ");
+                    builder.append(words[i]);
+                }
+                //fill in spaces to the last length if all the words had been put into the line
+                for (int i = builder.length(); i < maxWidth; i++){
+                    builder.append(" ");
+                }
+            } else {
+                //VERY IMPORTANT!!! for the extra spaces
+                int spaces = (maxWidth - count) / diff;
+                int r = (maxWidth - count) % diff;
+                for (int i = index + 1; i < last; i++){
+                    for (int k = spaces; k > 0; k--){
+                        builder.append(" ");
+                    }
+                    if (r > 0){
+                        builder.append(" ");
+                        r--;
+                    }
+                    builder.append(" ");
+                    builder.append(words[i]);
+                }
+            }
+            res.add(builder.toString());
+            index = last;
+        }
+        return res;
+    }
+}
+
+
+FIRST DRAFT: 2/25/2019
 class Solution {
     public List<String> fullJustify(String[] words, int maxWidth) {
         List<String> res = new ArrayList<>();
