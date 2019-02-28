@@ -1,0 +1,12 @@
+第一道是Highest Five，借用一下另一位楼主的照片。
+        -我是用一个unordered_map<int, priority_queue<double, vector<double>, mycompare>>来记录各个page的highest 5的值，其中mycompare是自己写的重载了比较操作符的类。由于是要用到小顶堆，而priority_queue默认用的是大顶堆，因此自定义了这个比较类。
+        具体解法看这个链接：https://yeqiuquan.blogspot.com/2 ... -613-high-five.html
+
+第二道是Maximum Average Subtree，再借用一下另一位楼主的照片。需要注意的是返回的必须是内部节点。
+        -我之前看到过这个题型的两种版本，一种是二叉树的，一种则是有多个子节点的。很不幸我遇到的是后者，为什么说不幸呢，且听我娓娓道来。
+        要注意我用的语言是C++，所以题目里对CategoryNode类的描述和截图里稍有不同。坑爹的是出题人写错了。。TA把成员变量subCategoryNode的类型写成了vector<CategoryNode>（经事实证明应该是vector<CategoryNode*>），直接导致了我编译一直没通过。等到我捣鼓了半天终于编译过了发现结果不对，时间只剩3分钟的我脑袋炸裂，并没能奇迹般的找出bug来。
+        解答看这里：https://www.1point3acres.com/bbs ... read&tid=478916
+        （另外OA要求那里好像有说不能用global以及static变量，所以我把res作为了helper的实参）
+        
+有closest two sum以及Maximum Average Subtree的代码
+find k distinct substring 
